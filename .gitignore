@@ -1,0 +1,14 @@
+.env
+.env.*
+.venv/
+venv/
+__pycache__/
+*.pyc
+chat_history.json
+.streamlit/secrets.toml
+.vscode/
+
+# Intermediate files
+embeddings.json
+embeddings_progress.json
+
