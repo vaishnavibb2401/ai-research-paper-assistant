@@ -28,11 +28,12 @@ st.title("📚 AI Research Paper Assistant")
 
 load_dotenv()
 
-gemini_key = os.getenv("GEMINI_API_KEY")
-groq_key = os.getenv("GROQ_API_KEY")
+# Read API keys from local environment or Streamlit Cloud Secrets
+gemini_key = os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY")
+groq_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
 
 if not gemini_key or not groq_key:
-    st.error("API keys are missing from .env file.")
+    st.error("API keys are missing. Please configure your secrets.")
     st.stop()
 
 
